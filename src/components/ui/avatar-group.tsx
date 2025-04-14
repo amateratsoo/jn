@@ -1,3 +1,7 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+
 interface Props {
   images: {
     src: string
@@ -64,12 +68,25 @@ export function AvatarGroup({
     }
   }
 
+  const [componentIsReady, setComponentIsReady] = useState(false)
+
+  useEffect(() => {
+    setComponentIsReady(true)
+  }, [])
+
   return (
     <div
       className='flex items-center justify-center w-full py-10'
       style={{
         gap: `${contentSeparation}rem`,
-        flexDirection: contentDirection == 'vertical' ? 'column' : 'row'
+        flexDirection:
+          contentDirection == 'vertical'
+            ? 'column'
+            : `${
+                componentIsReady && matchMedia('(width >= 48rem)').matches
+                  ? 'row'
+                  : 'column'
+              }`
       }}
     >
       <div

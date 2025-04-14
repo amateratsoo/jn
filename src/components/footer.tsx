@@ -58,7 +58,7 @@ export function Footer() {
         alt=''
         className='size-72 absolute -top-60 lg:left-40'
       />
-      <footer className='bg-black w-full px-20 lg:px-52 relative z-20'>
+      <footer className='bg-black w-full px-8 sm:px-20 lg:px-52 relative z-20'>
         <div className='w-full flex py-16 pt-24 justify-between gap-4'>
           <div>
             <h2 className='text-white text-5xl'>Faça parte da comunidade</h2>

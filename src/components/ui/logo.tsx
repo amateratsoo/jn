@@ -5,7 +5,7 @@ interface Props {
 
 export function Logo({ justIcon = false, color = '#09090b' }: Props) {
   return (
-    <a href=''>
+    <a href='#'>
       <span className='space-x-1'>
         <svg
           className='size-10 inline'
@@ -20,7 +20,7 @@ export function Logo({ justIcon = false, color = '#09090b' }: Props) {
         </svg>
         {!justIcon && (
           <span
-            className='font-sans-serif font-semibold text-lg'
+            className='font-sans-serif font-semibold text-lg hidden md:inline'
             style={{ color: color }}
           >
             Jussela Nascimento

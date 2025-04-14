@@ -10,7 +10,7 @@ interface Props {
 
 export function Blockquote({ author, avatar, subtitle, text }: Props) {
   return (
-    <blockquote className='relative'>
+    <blockquote className='relative mx-8 sm:mx-0'>
       <svg
         className='absolute -top-6 -start-8 size-16 text-zinc-300'
         width='16'

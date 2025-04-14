@@ -15,7 +15,7 @@ export function Hero() {
 
         <h1 className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 lg:text-6xl text-5xl font-semibold font-sans-serif text-white w-full'>
           <div className='flex flex-col items-center'>
-            <span className=''>Porque tu mereces ter </span>
+            <span className='text-center'>Porque tu mereces ter </span>
             <FadingWords
               animationDuration={4.5}
               words={['Estilo', 'Autenticidade', 'Beleza']}

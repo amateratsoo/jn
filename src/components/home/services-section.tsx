@@ -32,7 +32,7 @@ export function ServicesSection() {
         Agende já os nossos serviços profissionais
       </h2>
 
-      <div className='space-y-7 mx-20 lg:mx-52'>
+      <div className='space-y-7 mx-7 sm:mx-20 lg:mx-52'>
         {services.map((service, index) => (
           <div key={index} className='flex flex-col'>
             <img
@@ -42,8 +42,10 @@ export function ServicesSection() {
             />
 
             <div className='my-5 '>
-              <h3 className='text-4xl font-medium'>{service.title}</h3>
-              <p className='my-4 w-[34rem] font-sans-serif text-balance'>
+              <h3 className='text-2xl sm:text-4xl font-medium'>
+                {service.title}
+              </h3>
+              <p className='my-4 w-full sm:w-[34rem] font-sans-serif text-balance'>
                 {service.description}
               </p>
               <button className='bg-black w-fit text-white p-2 rounded-lg text-sm mt-1.5 px-3.5 cursor-pointer flex gap-1 items-center hover:gap-2 group transition-all'>

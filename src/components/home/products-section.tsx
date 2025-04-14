@@ -58,7 +58,7 @@ export function ProductsSection() {
       </h2>
 
       <div>
-        <div className='grid grid-cols-2 lg:grid-cols-4 gap-3'>
+        <div className='grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-4 gap-3'>
           {products.map((product, index) => {
             const hasDiscount = product.discountPrice !== null
 
@@ -74,7 +74,7 @@ export function ProductsSection() {
                 />
 
                 <div className='flex flex-col gap-2 pt-4'>
-                  <span className='font-semibold text-xl'>{product.title}</span>
+                  <span className='font-medium text-xl'>{product.title}</span>
 
                   <div className='flex items-center gap-2'>
                     {hasDiscount ? (
@@ -82,7 +82,7 @@ export function ProductsSection() {
                         <span className='line-through text-sm text-red-400'>
                           {product.price.toFixed(2)} €
                         </span>
-                        <span className='text-lg font-semibold text-zinc-900 font-sans-serif'>
+                        <span className='text-lg  text-zinc-900 font-sans-serif'>
                           {product.discountPrice.toFixed(2)} €
                         </span>
                         {/* <span className='text-sm text-red-200 bg-red-400 rounded-lg px-2 py-0.5'>
@@ -95,7 +95,7 @@ export function ProductsSection() {
                       </span> */}
                       </>
                     ) : (
-                      <span className='text-lg font-semibold font-sans-serif'>
+                      <span className='text-lg  font-sans-serif'>
                         {product.price.toFixed(2)} €
                       </span>
                     )}
