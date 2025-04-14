@@ -6,6 +6,10 @@
   --animate-fadeInOut: fadeInOut linear infinite;
 }
 
+body {
+  @apply bg-yellow-50/40;
+}
+
 @keyframes fadeInOut {
   0%,
   30%,

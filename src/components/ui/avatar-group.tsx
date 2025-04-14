@@ -21,6 +21,7 @@ interface Props {
   borderColor?: string
   avatarSeparation?: number
   contentDirection?: 'vertical' | 'horizontal'
+  contentSeparation?: number
   text: string
   textColor?: string
 }
@@ -32,30 +33,79 @@ export function AvatarGroup({
   borderColor = 'white',
   avatarDirection = 'horizontal',
   avatarSize = 16,
-  avatarSeparation = 4,
+  avatarSeparation = -1,
   contentDirection = 'horizontal',
+  contentSeparation = 1.4,
   text,
   textColor = '#3f3f46'
 }: Props) {
-  const twAvatarDirection =
-    avatarDirection == 'vertical'
-      ? `flex-col -space-y-${avatarSeparation}`
-      : `-space-x-${avatarSeparation}`
-
-  const twAvatarStyles = `size-${avatarSize} rounded-${avatarBorderRadius} border-${borderThickness} border-${borderColor}`
-  const twContentDirection = contentDirection == 'vertical' ? `flex-col` : ''
+  const handleBorderRadius = () => {
+    switch (avatarBorderRadius) {
+      case 'xs':
+        return '0.125rem'
+      case 'sm':
+        return '0.25rem'
+      case 'md':
+        return '0.375rem'
+      case 'lg':
+        return '0.5rem'
+      case 'xl':
+        return '0.75rem'
+      case '2xl':
+        return '1rem'
+      case '3xl':
+        return '1.5rem'
+      case '4xl':
+        return '2rem'
+      case 'none':
+        return 0
+      case 'full':
+        return 'calc(infinity * 1px)'
+    }
+  }
 
   return (
     <div
-      className={`flex ${twContentDirection} items-center justify-center w-full gap-4 py-10`}
+      className='flex items-center justify-center w-full py-10'
+      style={{
+        gap: `${contentSeparation}rem`,
+        flexDirection: contentDirection == 'vertical' ? 'column' : 'row'
+      }}
     >
-      <div className={`flex ${twAvatarDirection}`}>
+      <div
+        className='flex'
+        style={{
+          flexDirection: avatarDirection == 'vertical' ? 'column' : 'row'
+        }}
+      >
         {images.map((image, index) => (
           <img
             key={index}
             src={image.src}
             alt={image.alt}
-            className={`${twAvatarStyles} object-cover`}
+            className='object-cover'
+            style={{
+              borderRadius: handleBorderRadius(),
+              width: `${avatarSize * 0.25}rem`,
+              height: `${avatarSize * 0.25}rem`,
+              border: `${borderThickness}px solid ${borderColor}`,
+              marginBlockStart:
+                avatarDirection == 'vertical'
+                  ? `calc(8px * ${avatarSeparation})`
+                  : undefined,
+              marginBlockEnd:
+                avatarDirection == 'vertical'
+                  ? `calc(8px * ${avatarSeparation})`
+                  : undefined,
+              marginInlineStart:
+                avatarDirection == 'horizontal'
+                  ? `calc(8px * ${avatarSeparation})`
+                  : undefined,
+              marginInlineEnd:
+                avatarDirection == 'horizontal'
+                  ? `calc(8px * ${avatarSeparation})`
+                  : undefined
+            }}
           />
         ))}
       </div>

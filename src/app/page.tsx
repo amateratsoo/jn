@@ -1,6 +1,7 @@
 import { Hero, ProductsSection, ServicesSection } from '@/components/home'
 import { AvatarGroup } from '@/components/ui'
 import { Footer } from '@/components/footer'
+import { Blockquote } from '@/components/ui/blockquote'
 
 const clientsImages = [
   {
@@ -27,12 +28,20 @@ const clientsImages = [
 
 export default function Home() {
   return (
-    <div className='font-sans bg-yellow-50/40 px-4'>
-      <main>
+    <div className='font-sans'>
+      <main className='px-4'>
         <Hero />
         <ProductsSection />
-        <AvatarGroup images={clientsImages} text='40+ clientes satisfeitos' />
+        <div className='my-3'>
+          <AvatarGroup images={clientsImages} text='40+ clientes satisfeitos' />
+        </div>
         <ServicesSection />
+
+        <div className='w-full flex justify-center my-36'>
+          <div className='w-[34rem]'>
+            <Blockquote />
+          </div>
+        </div>
       </main>
 
       <Footer />

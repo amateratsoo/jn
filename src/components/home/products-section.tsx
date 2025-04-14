@@ -1,3 +1,5 @@
+import { ArrowRightIcon } from '@radix-ui/react-icons'
+
 const products = [
   {
     image: {
@@ -41,8 +43,8 @@ const products = [
       alt: 'uma imagem mostrando uma cadeira centrada numa casa estúdio'
     },
     title: 'Projeto de decoração de interiores',
-    discountPrice: null,
-    price: 700.0,
+    discountPrice: 700.0,
+    price: 890.0,
     href: '',
     color: 'bg-amber-200/20'
   }
@@ -51,7 +53,7 @@ const products = [
 export function ProductsSection() {
   return (
     <div>
-      <h2 className='font-medium py-7 pb-8 text-5xl font-sans-serif'>
+      <h2 className='font-medium py-16 pb-10 text-5xl font-sans-serif text-center'>
         Explore a nossa coleção de produtos
       </h2>
 
@@ -98,6 +100,11 @@ export function ProductsSection() {
                       </span>
                     )}
                   </div>
+
+                  <button className='bg-black w-fit text-white p-2 rounded-lg text-sm mt-1.5 px-3.5 cursor-pointer flex gap-1 items-center hover:gap-2 group transition-all'>
+                    ver mais
+                    <ArrowRightIcon className='-rotate-45 group-hover:rotate-0 transition-all' />
+                  </button>
                 </div>
               </article>
             )
