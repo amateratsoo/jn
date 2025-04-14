@@ -39,7 +39,15 @@ export default function Home() {
 
         <div className='w-full flex justify-center my-36'>
           <div className='w-[34rem]'>
-            <Blockquote />
+            <Blockquote
+              author='Carla Abrantes'
+              avatar={{
+                src: 'https://images.unsplash.com/photo-1694436085959-fd3cdb3293c3?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxhY2slMjBnaXJsJTIwY3VybHklMjBoYWlyfGVufDB8fDB8fHww',
+                alt: 'avatar of a person giving a testimony'
+              }}
+              text='Sempre gostei de decoração, mas faltava direção. Com a ajuda deles, consegui criar um ambiente que realmente reflete minha personalidade — acolhedor, bonito e funcional.'
+              subtitle='cliente apaixonada por design'
+            />
           </div>
         </div>
       </main>

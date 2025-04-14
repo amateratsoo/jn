@@ -1,8 +1,18 @@
-export function Blockquote() {
+interface Props {
+  text: string
+  author: string
+  subtitle?: string
+  avatar: {
+    src: string
+    alt: string
+  }
+}
+
+export function Blockquote({ author, avatar, subtitle, text }: Props) {
   return (
     <blockquote className='relative'>
       <svg
-        className='absolute -top-6 -start-8 size-16 text-gray-100'
+        className='absolute -top-6 -start-8 size-16 text-zinc-300'
         width='16'
         height='16'
         viewBox='0 0 16 16'
@@ -17,11 +27,8 @@ export function Blockquote() {
       </svg>
 
       <div className='relative z-10'>
-        <p className='text-gray-800 sm:text-xl'>
-          <em>
-            I just wanted to say that I'm very happy with my purchase so far.
-            The documentation is outstanding - clear and detailed.
-          </em>
+        <p className='text-gray-800 sm:text-xl max-w-prose leading-relaxed font-sans-serif'>
+          <em>{text}</em>
         </p>
       </div>
 
@@ -29,16 +36,16 @@ export function Blockquote() {
         <div className='flex items-center'>
           <div className='shrink-0'>
             <img
-              className='size-10 rounded-full'
-              src='https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80'
-              alt='Avatar'
+              className='size-10 rounded-full object-cover'
+              src={avatar.src}
+              alt={avatar.alt || `imagem de ${author}`}
             />
           </div>
-          <div className='ms-4'>
+          <div className='ms-4 font-sans'>
             <div className='text-base font-semibold text-gray-800'>
-              Josh Grazioso
+              {author}
             </div>
-            <div className='text-xs text-gray-500'>Source title</div>
+            <div className='text-xs text-gray-500'>{subtitle}</div>
           </div>
         </div>
       </footer>

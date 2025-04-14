@@ -43,7 +43,7 @@ export function ServicesSection() {
 
             <div className='my-5 '>
               <h3 className='text-4xl font-medium'>{service.title}</h3>
-              <p className='my-4 w-[34rem] font-sans-serif'>
+              <p className='my-4 w-[34rem] font-sans-serif text-balance'>
                 {service.description}
               </p>
               <button className='bg-black w-fit text-white p-2 rounded-lg text-sm mt-1.5 px-3.5 cursor-pointer flex gap-1 items-center hover:gap-2 group transition-all'>

@@ -20,7 +20,18 @@ export const metadata: Metadata = {
     'Official website of Jussela Nascimento and all related products',
   keywords: [],
   icons: {
-    icon: 'logo.svg'
+    icon: [
+      {
+        media: '(prefers-color-scheme: light)',
+        url: 'icon2.ico',
+        href: 'ico2.ico'
+      },
+      {
+        media: '(prefers-color-scheme: dark)',
+        url: 'icon.ico',
+        href: 'icon.ico'
+      }
+    ]
   }
 }
 

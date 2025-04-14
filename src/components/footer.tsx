@@ -1,5 +1,6 @@
-import { ArrowTopRightIcon, InstagramLogoIcon } from '@radix-ui/react-icons'
-import { Logo } from './ui'
+import { InstagramLogoIcon } from '@radix-ui/react-icons'
+import { LinksSectionList, Logo } from './ui'
+import { LegalNotice } from './footer/legal-notice'
 
 const links = [
   {
@@ -62,36 +63,14 @@ export function Footer() {
           <div>
             <h2 className='text-white text-5xl'>Faça parte da comunidade</h2>
 
-            <p className='text-white pt-8 font-sans-serif min-w-80 w-80'>
+            <p className='text-white pt-8 font-sans-serif max-w-sm text-balance'>
               Segue-nos nas redes sociais e fica por dentro de todas as
               novidades, dicas e inspirações.
             </p>
 
-            <div className='flex text-white flex-col mt-7 gap-4'>
-              {links.map(link => (
-                <div key={link.title}>
-                  <h4 className='text-lg my-1.5 text-white'>{link.title}</h4>
-                  <ul className=''>
-                    {link.links.map(l => {
-                      const Icon = l.icon || ArrowTopRightIcon
-
-                      return (
-                        <li key={l.name}>
-                          <a
-                            className='underline flex items-center gap-1 text-zinc-300 text-sm w-fit'
-                            href={l.href}
-                          >
-                            <Icon />
-                            {l.name}
-                          </a>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </div>
-              ))}
-            </div>
+            <LinksSectionList list={links} />
           </div>
+
           <div className='hidden md:block'>
             <img
               src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=958&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -101,15 +80,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className='py-4 flex justify-between items-center w-full'>
-          <span className='text-zinc-300 text-sm'>
-            &copy; {new Date().getFullYear()} todos os direitos reservados
-          </span>
-
-          <div className='scale-90'>
-            <Logo color='#d4d4d8' />
-          </div>
-        </div>
+        <LegalNotice />
       </footer>
     </div>
   )
