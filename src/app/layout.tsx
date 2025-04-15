@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Poppins, Bricolage_Grotesque } from 'next/font/google'
 import './globals.css'
-import logo from '../../public/logo.svg'
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -23,13 +22,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: '(prefers-color-scheme: light)',
-        url: 'icon2.ico',
-        href: 'ico2.ico'
+        url: 'dark-icon.png',
+        href: 'dark-icon.png'
       },
       {
         media: '(prefers-color-scheme: dark)',
-        url: 'icon.ico',
-        href: 'icon.ico'
+        url: 'light-icon.png',
+        href: 'light-icon.png'
       }
     ]
   }

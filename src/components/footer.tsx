@@ -1,5 +1,5 @@
 import { InstagramLogoIcon } from '@radix-ui/react-icons'
-import { LinksSectionList, Logo } from './ui'
+import { LinksSectionList } from './ui'
 import { LegalNotice } from './footer/legal-notice'
 
 const links = [
@@ -54,7 +54,7 @@ export function Footer() {
   return (
     <div className='mt-96 relative'>
       <img
-        src='lovebirds.svg'
+        src='/lovebirds.svg'
         alt=''
         className='size-72 absolute -top-60 lg:left-40'
       />

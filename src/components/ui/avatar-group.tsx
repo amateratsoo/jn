@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useMediaQuery } from '@/hooks'
 
 interface Props {
   images: {
@@ -68,25 +68,17 @@ export function AvatarGroup({
     }
   }
 
-  const [componentIsReady, setComponentIsReady] = useState(false)
-
-  useEffect(() => {
-    setComponentIsReady(true)
-  }, [])
+  const isSm = useMediaQuery('(width >= 48rem)')
 
   return (
     <div
-      className='flex items-center justify-center w-full py-10'
+      className='flex items-center justify-center w-full'
       style={{
         gap: `${contentSeparation}rem`,
         flexDirection:
           contentDirection == 'vertical'
             ? 'column'
-            : `${
-                componentIsReady && matchMedia('(width >= 48rem)').matches
-                  ? 'row'
-                  : 'column'
-              }`
+            : `${isSm ? 'row' : 'column'}`
       }}
     >
       <div

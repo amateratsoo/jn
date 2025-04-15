@@ -1,14 +1,16 @@
+import { ReactNode } from 'react'
+
 interface Props {
-  text: string
+  children: ReactNode
   author: string
   subtitle?: string
-  avatar: {
+  avatar?: {
     src: string
     alt: string
   }
 }
 
-export function Blockquote({ author, avatar, subtitle, text }: Props) {
+export function Blockquote({ author, avatar, subtitle, children }: Props) {
   return (
     <blockquote className='relative mx-8 sm:mx-0'>
       <svg
@@ -28,18 +30,22 @@ export function Blockquote({ author, avatar, subtitle, text }: Props) {
 
       <div className='relative z-10'>
         <p className='text-gray-800 sm:text-xl max-w-prose leading-relaxed font-sans-serif'>
-          <em>{text}</em>
+          <em>{children}</em>
         </p>
       </div>
 
       <footer className='mt-6'>
         <div className='flex items-center'>
           <div className='shrink-0'>
-            <img
-              className='size-10 rounded-full object-cover'
-              src={avatar.src}
-              alt={avatar.alt || `imagem de ${author}`}
-            />
+            {avatar?.src ? (
+              <img
+                className='size-10 rounded-full object-cover'
+                src={avatar.src}
+                alt={avatar.alt || `imagem de ${author}`}
+              />
+            ) : (
+              <div className='size-10 rounded-full bg-zinc-200' />
+            )}
           </div>
           <div className='ms-4 font-sans'>
             <div className='text-base font-semibold text-gray-800'>

@@ -1,9 +1,14 @@
 @import 'tailwindcss';
+@plugin "@tailwindcss/typography";
 
 @theme inline {
   --font-sans: var(--font-poppins);
   --font-sans-serif: var(--font-bricolage-grotesque);
   --animate-fadeInOut: fadeInOut linear infinite;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

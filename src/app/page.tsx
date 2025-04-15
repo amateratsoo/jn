@@ -32,8 +32,12 @@ export default function Home() {
       <main className='px-4'>
         <Hero />
         <ProductsSection />
-        <div className='my-3'>
-          <AvatarGroup images={clientsImages} text='40+ clientes satisfeitos' />
+        <div className='mt-20'>
+          <AvatarGroup
+            contentDirection='vertical'
+            images={clientsImages}
+            text='40+ clientes satisfeitos'
+          />
         </div>
         <ServicesSection />
 
@@ -45,9 +49,12 @@ export default function Home() {
                 src: 'https://images.unsplash.com/photo-1694436085959-fd3cdb3293c3?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmxhY2slMjBnaXJsJTIwY3VybHklMjBoYWlyfGVufDB8fDB8fHww',
                 alt: 'avatar of a person giving a testimony'
               }}
-              text='Sempre gostei de decoração, mas faltava direção. Com a ajuda deles, consegui criar um ambiente que realmente reflete minha personalidade — acolhedor, bonito e funcional.'
-              subtitle='cliente apaixonada por design'
-            />
+            >
+              Sempre gostei de decoração, mas faltava direção. Com a ajuda
+              deles, consegui criar um ambiente que realmente reflete minha
+              personalidade — acolhedor, bonito e funcional.' subtitle='cliente
+              apaixonada por design
+            </Blockquote>
           </div>
         </div>
       </main>
