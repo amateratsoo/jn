@@ -1,6 +1,5 @@
 import { ArrowRightIcon } from '@radix-ui/react-icons'
 
-import { CalEventCalendar } from '@/components/cal-event-calendar'
 import { services } from '@/store'
 import { handleCalBookingUrl } from '@/utils/handle-cal-booking-url'
 
@@ -27,18 +26,6 @@ export function ServicesSection() {
               <p className='my-4 w-full sm:w-[34rem] font-sans-serif text-balance'>
                 {service.description}
               </p>
-              {/* <CalEventCalendar
-                eventName={service.title.trim().replaceAll(' ', '-')}
-              >
-                <button
-                  className='bg-black w-fit text-white p-2 rounded-lg text-sm mt-1.5 px-3.5 cursor-pointer flex gap-1 items-center hover:gap-2 group transition-all'
-
-                >
-                  agendar
-                  https://cal.com/jo-saint/consultoria-para-redecorar-espacos
-                  <ArrowRightIcon className='-rotate-45 group-hover:rotate-0 transition-all' />
-                </button>
-              </CalEventCalendar> */}
               <a
                 className='bg-black w-fit text-white p-2 rounded-lg text-sm mt-1.5 px-3.5 cursor-pointer flex gap-1 items-center hover:gap-2 group transition-all'
                 href={handleCalBookingUrl({
