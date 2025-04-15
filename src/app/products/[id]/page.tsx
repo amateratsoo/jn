@@ -39,7 +39,7 @@ export default async function Page({ params }: Props) {
           <a
             className='flex w-fit items-center justify-center gap-2 bg-zinc-200/50 rounded-full p-2 px-4 border border-zinc-300 group cursor-pointer hover:scale-110 transition-all'
             href={handleCalBookingUrl({
-              eventName: product.href
+              eventName: product.title
             })}
             target='_blank'
           >
@@ -49,7 +49,7 @@ export default async function Page({ params }: Props) {
             </div>
 
             <div className='flex items-center font-medium text-sm justify-center font-sans'>
-              <span>{product.price} €</span>
+              <span>{product.discountPrice || product.price} €</span>
               <DotFilledIcon className='mx-0.5' />
               <span className='flex items-center justify-center gap-1 group-hover:gap-1.5 transition-all'>
                 já disponível

@@ -7,7 +7,6 @@ export const products = [
     title: 'Consultoria de imagem para grávida e pós-parto',
     discountPrice: 375.0,
     price: 394.0,
-    href: '',
     color: 'bg-zinc-200/50',
     blockquote: {
       avatar: {
@@ -40,7 +39,6 @@ Ideal para quem quer simplificar o vestir e manter-se confiante no pós-parto.
     title: 'Visagismo',
     discountPrice: null,
     price: 85.0,
-    href: '',
     color: 'bg-pink-200/60',
     blockquote: {
       avatar: {
@@ -73,7 +71,6 @@ Perfeito para quem procura uma mudança sutil, mas impactante.
     title: 'Styling para sessão de foto profissional',
     discountPrice: null,
     price: 350.0,
-    href: '',
     color: 'bg-zinc-200/50',
     blockquote: {
       avatar: {
@@ -106,7 +103,6 @@ Ideal para criar uma imagem coesa, profissional e autêntica.
     title: 'Projeto de decoração de interiores',
     discountPrice: 700.0,
     price: 890.0,
-    href: '',
     color: 'bg-amber-200/20',
     blockquote: {
       avatar: {
